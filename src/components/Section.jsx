@@ -15,6 +15,15 @@ export default function Section({ id, children }) {
         boxSizing: "border-box",
       }}
     >
+      <Box
+        sx={{
+          maxWidth: 800,
+
+          textAlign: "center"
+        }}
+      >
+
+      </Box>
       {children}
     </Box>
   );
