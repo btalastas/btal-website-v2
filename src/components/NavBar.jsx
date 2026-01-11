@@ -16,7 +16,12 @@ export default function Navbar() {
 
   return (
     <AppBar position="fixed">
-      <Toolbar>
+      <Toolbar
+        sx={{
+          display: "flex",
+          justifyContent: "center", 
+        }}
+      >
         {sections.map((section) => (
           <Button
             key={section.id}
