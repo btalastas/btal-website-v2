@@ -1,5 +1,4 @@
 import { Typography, Button, Stack, Box, Avatar } from "@mui/material";
-import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import profilePic from "../assets/profile-pic.jpg";
 export default function Hero() {
   return (
@@ -26,7 +25,7 @@ export default function Hero() {
         </Typography>
 
         <Typography variant="h5">
-          Software Engineer • React • Docker
+          Aspiring Developer / Analyst • B.S. Computer Science, GMU
         </Typography>
 
         <Button variant="contained" color="primary">
