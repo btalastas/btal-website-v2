@@ -21,7 +21,7 @@ export default function Hero() {
         />
 
         <Typography variant="h2">
-          Bjorn Talastas
+          Bjorn Nathanial Talastas
         </Typography>
 
         <Typography variant="h5">
