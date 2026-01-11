@@ -1,26 +1,35 @@
-import { Box, Typography, Divider, Stack } from "@mui/material";
+import { Box, Typography, Divider, Stack, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
+import LanguageIcon from '@mui/icons-material/Language';
 import CompanyExperience from "../components/CompanyExperience";
+import CircleIcon from '@mui/icons-material/Circle';
+
+import Skills from "../components/Skills";
 
 export default function About() {
   return (
     <Box sx={{ width: "100%", maxWidth: 900 }}>
       <Stack spacing={2}>
-        <Stack direction="row" spacing={1} alignItems="center">
+        <Stack direction="column" spacing={1} alignItems="center">
           <WorkOutlineIcon />
-          <Typography variant="h4" sx={{ fontWeight: 800 }}>
+          <Typography variant="h3" sx={{ fontWeight: 800 }}>
             About
           </Typography>
         </Stack>
 
+        <Divider />
+
         <Typography sx={{ opacity: 0.9 }}>
-          Computer Science graduate with experience spanning business analysis,
-          quality assurance, and cross-functional operations.
+          George Mason University alumnus with a B.S. in Computer Science. 10+ years of professional experience ranging from start-ups to supporting government contracts. <br /><br />
+          Looking to leverage my skills acquired through education and diverse work experiences to transition into a developement or analyst role. 
         </Typography>
 
         <Divider />
 
-        <Typography variant="h5" sx={{ fontWeight: 800 }}>
+
+        <Divider />
+
+        <Typography variant="h5" sx={{ fontWeight: 800, justifyContent: "center", display: "flex" }}>
           Work Experience
         </Typography>
 
@@ -126,6 +135,9 @@ export default function About() {
             },
           ]}
         />
+
+
+        <Skills />
       </Stack>
     </Box>
   );

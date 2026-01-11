@@ -1,4 +1,5 @@
 import { Typography, Button, Stack, Box, Avatar } from "@mui/material";
+import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import profilePic from "../assets/profile-pic.jpg";
 export default function Hero() {
   return (
