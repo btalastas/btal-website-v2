@@ -1,8 +1,6 @@
-import { Box, Typography, Divider, Stack, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import { Box, Typography, Divider, Stack} from "@mui/material";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
-import LanguageIcon from '@mui/icons-material/Language';
 import CompanyExperience from "../components/CompanyExperience";
-import CircleIcon from '@mui/icons-material/Circle';
 
 import Skills from "../components/Skills";
 
