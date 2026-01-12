@@ -28,7 +28,7 @@ const images = [
 
 export default function Gallery() {
   return (
-    <Box sx={{ width: "100%", maxWidth: 1000 }}>
+    <Box sx={{ width: "100%", maxWidth: 900, mx: "auto", overflowX: "hidden" }}>
       <Typography variant="h4" sx={{ fontWeight: 800, mb: 2, textAlign: "center" }}>
         Gallery
       </Typography>
@@ -44,23 +44,14 @@ export default function Gallery() {
         {images.map((img) => (
           <Card
             key={img.alt}
-            sx={{
-            flex: "0 0 auto",
-            width: { xs: 340, sm: 520, md: 680 }, 
-            borderRadius: 3,
-            scrollSnapAlign: "start",
-        }}
->
+            sx={{ flex: "0 0 auto", width: { xs: "80vw", sm: 340, md: 380 }, scrollSnapAlign: "start" }}
+          >
             <CardMedia
               component="img"
               image={img.src}
               alt={img.alt}
-              loading="lazy"     
-              sx={{ 
-                aspectRatio: "4/3",
-
-                /*height: { xs: 260, sm: 340, md: 420 }, */ 
-                objectFit: "cover", }}
+              loading="lazy"
+              sx={{ height: 240, objectFit: "cover" }}
             />
           </Card>
         ))}
