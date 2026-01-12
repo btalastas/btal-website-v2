@@ -51,7 +51,10 @@ export default function Gallery() {
               image={img.src}
               alt={img.alt}
               loading="lazy"
-              sx={{ height: 240, objectFit: "cover" }}
+              sx={{ 
+                height: { xs: 200, sm: 240, md: 280 },
+                width: "100%",
+                objectFit: "cover", }}
             />
           </Card>
         ))}
