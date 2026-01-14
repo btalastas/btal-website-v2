@@ -6,8 +6,7 @@ import Skills from "../components/Skills";
 
 export default function About() {
   return (
-    <Box sx={{ width: "100%", maxWidth: 900 }}>
-      <Stack spacing={2}>
+      <Stack spacing={2} sx={{ width: "100%" }}>
         <Stack direction="column" spacing={1} alignItems="center">
           <WorkOutlineIcon />
           <Typography variant="h3" sx={{ fontWeight: 800 }}>
@@ -137,6 +136,5 @@ export default function About() {
 
         <Skills />
       </Stack>
-    </Box>
   );
 }
