@@ -1,4 +1,5 @@
 import { AppBar, Toolbar, Button } from "@mui/material";
+import { scrollToSection } from "../utils/scrollToSection";
 
 const sections = [
   { label: "Home", id: "home" },
@@ -9,12 +10,6 @@ const sections = [
 ];
 
 export default function Navbar() {
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
-
   return (
     <AppBar position="fixed">
       <Toolbar
@@ -27,7 +22,7 @@ export default function Navbar() {
           <Button
             key={section.id}
             color="inherit"
-            onClick={() => scrollTo(section.id)}
+            onClick={() => scrollToSection(section.id)}
           >
             {section.label}
           </Button>
