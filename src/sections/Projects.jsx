@@ -4,9 +4,9 @@ import LaunchIcon from "@mui/icons-material/Launch";
 const projects = [
   {
     title: "Leetcode",
-    description: "Solutions to various leetcode problems using Java.",
-    chips: ["Java", "Algorithms", "Data Structures", "Problem Solving", "OOP"],
-    link: "https://github.com/btalastas/leetcode",
+    description: "Solutions to various leetcode problems using Java + Maven. Utilizes JUnit for testing.",
+    chips: ["Java", "Algorithms", "Data Structures", "Problem Solving", "OOP", "JUnit"],
+    link: "https://github.com/btalastas/leetcode_solutions",
   },
   {
     title: "Traveling Salesman Problem Comparison",
