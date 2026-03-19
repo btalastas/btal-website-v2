@@ -1,6 +1,13 @@
 import { Typography, Grid, Card, CardContent, Stack, CardActions, Button, Chip, Box } from "@mui/material";
-
 import LaunchIcon from "@mui/icons-material/Launch";
+import SectionHeader from "../components/SectionHeader";
+import {
+  cardShellSx,
+  chipRowSx,
+  mutedBodySx,
+  sectionStackSx,
+} from "../styles/sectionStyles";
+
 const projects = [
   {
     title: "Leetcode",
@@ -66,31 +73,26 @@ const projects = [
 
 export default function Projects() {
   return (
-    <Stack spacing={2} sx={{ width: "100%" }}>
-      <Box>
-        <Stack direction="column" spacing={1} alignItems="center">
-        <Typography variant="h3" sx={{ fontWeight: 800 }}>
-          Projects
-        </Typography>
-        <Typography variant="h6" sx={{ opacity: 0.8, textAlign: "center" }}>
-          Selected personal and academic projects
-        </Typography>
-      </Stack>
-      </Box>
+    <Stack spacing={3} sx={sectionStackSx}>
+      <SectionHeader
+        title="Projects"
+        titleVariant="h4"
+        subtitle="Selected personal and academic work across software engineering, algorithms, and data-focused projects."
+      />
 
       <Box sx={{ width: "100%" }}>
       <Grid container spacing={3}>
         {projects.map((project) => (
           <Grid item size={{ xs: 12, sm: 6, md: 4, lg: 4 }} key={project.title} sx={{ display: "flex" }}>
-            <Card sx={{ width: "100%", display: "flex", flexDirection: "column", bgcolor: "background.paper", border: "1px solid", borderColor: "divider", borderRadius: 2, boxShadow: "none" }} >
+            <Card sx={cardShellSx}>
               <CardContent sx={{ flexGrow: 1 }}>
-                <Typography variant="h6" sx={{fontWeight: 700}}>{project.title}</Typography>
-                <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" sx={{ my: 1 }}>
+                <Typography variant="h6">{project.title}</Typography>
+                <Stack direction="row" spacing={1} useFlexGap sx={chipRowSx}>
                   {project.chips.map((chip) => (
                     <Chip key={chip} label={chip} size="small" color="primary" variant="outlined"/>
                   ))}
                 </Stack>
-                <Typography variant="caption" sx={{ mb: 2, opacity: 0.9, color: "text.primary", fontSize: {xs: "1.5rem", sm: "2rem", md: "1.2rem"} }}>{project.description}</Typography>
+                <Typography variant="body2" sx={mutedBodySx}>{project.description}</Typography>
               </CardContent>
 
               <CardActions>

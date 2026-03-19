@@ -1,19 +1,20 @@
 import { Typography, Button, Stack, Box, Avatar } from "@mui/material";
 import profilePic from "../assets/profile-pic.webp";
 import {scrollToSection} from "../utils/scrollToSection";
+import { mutedBodySx } from "../styles/sectionStyles";
 
 export default function Hero() {
   return (
     <Box
       sx={{
-        minHeight: "100dvh",
+        minHeight: { xs: "70dvh", md: "78dvh" },
         width: "100%",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <Stack spacing={2.5} alignItems="center" sx={{ textAlign: "center", width: "100%", mx: "auto" }}>
+      <Stack spacing={2.5} alignItems="center" sx={{ textAlign: "center", width: "100%", maxWidth: 720, mx: "auto" }}>
         <Avatar
           src={profilePic}
           alt="Bjorn Talastas"
@@ -26,11 +27,9 @@ export default function Hero() {
           }}
         />
 
-        <Typography variant="h2">
-          Bjorn Nathanial Talastas
-        </Typography>
+        <Typography variant="h2">Bjorn Nathanial Talastas</Typography>
 
-        <Typography variant="h5">
+        <Typography variant="h5" sx={mutedBodySx}>
           Aspiring Developer / Analyst • B.S. Computer Science, GMU
         </Typography>
 

@@ -19,6 +19,11 @@ import LayersIcon from "@mui/icons-material/Layers";
 import BuildIcon from "@mui/icons-material/Build";
 import ComputerIcon from "@mui/icons-material/Computer";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
+import {
+  centeredTitleSx,
+  mutedBodySx,
+  sectionStackSx,
+} from "../styles/sectionStyles";
 
 function SkillGroup({ title, icon, items, expanded, onChange }) {
   return (
@@ -27,18 +32,11 @@ function SkillGroup({ title, icon, items, expanded, onChange }) {
       onChange={onChange}
       disableGutters
       elevation={0}
-      sx={{
-        borderRadius: 2,
-        border: 1,
-        borderColor: "divider",
-        overflow: "hidden",
-        "&:before": { display: "none" }, // remove default top line
-      }}
+      sx={{ width: "100%" }}
     >
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         sx={{
-          bgcolor: "background.paper",
           "& .MuiAccordionSummary-expandIconWrapper": {
             color: "text.secondary",
           },
@@ -74,7 +72,7 @@ function SkillGroup({ title, icon, items, expanded, onChange }) {
               </ListItemIcon>
               <ListItemText
                 primary={item}
-                primaryTypographyProps={{ sx: { color: "text.primary" } }}
+                primaryTypographyProps={{ sx: mutedBodySx }}
               />
             </ListItem>
           ))}
@@ -93,8 +91,11 @@ export default function Skills() {
   };
 
   return (
-    <Stack spacing={1.5} sx={{ width: "100%" }}>
-      <Typography variant="h5" sx={{ fontWeight: 800, textAlign: "center" }}>
+    <Stack
+      spacing={1.5}
+      sx={{ ...sectionStackSx, width: "100%", maxWidth: 880, alignItems: "stretch" }}
+    >
+      <Typography variant="h5" sx={centeredTitleSx}>
         Skills
       </Typography>
 

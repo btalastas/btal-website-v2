@@ -15,7 +15,8 @@ export default function Navbar() {
       <Toolbar
         sx={{
           display: "flex",
-          justifyContent: "center", 
+          justifyContent: "center",
+          gap: { xs: 0.5, sm: 1.5 },
         }}
       >
         {sections.map((section) => (
@@ -23,6 +24,7 @@ export default function Navbar() {
             key={section.id}
             color="inherit"
             onClick={() => scrollToSection(section.id)}
+            sx={{ minWidth: "auto" }}
           >
             {section.label}
           </Button>

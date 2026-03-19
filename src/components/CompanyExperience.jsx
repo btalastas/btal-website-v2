@@ -9,42 +9,35 @@ import {
   Chip,
 } from "@mui/material";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import {
+  chipRowSx,
+  mutedBodySx,
+  outlinedChipSx,
+  timelineBlockSx,
+} from "../styles/sectionStyles";
 
 function Role({ title, dates, bullets, chips = [] }) {
   return (
-    <Box sx={{ pl: 2, borderLeft: "2px solid", borderColor: "divider" }}>
+    <Box sx={timelineBlockSx}>
       <Stack
         direction={{ xs: "column", sm: "row" }}
         justifyContent="space-between"
         alignItems={{ xs: "flex-start", sm: "baseline" }}
         sx={{ mb: 0.5 }}
       >
-        <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
-          {title}
-        </Typography>
-        <Typography variant="body2" sx={{ opacity: 0.75 }}>
-          {dates}
-        </Typography>
+        <Typography variant="subtitle1">{title}</Typography>
+        <Typography variant="body2" sx={mutedBodySx}>{dates}</Typography>
       </Stack>
 
-      {/* 🔹 Role-level chips */}
       {chips.length > 0 && (
-        <Stack
-          direction="row"
-          spacing={1}
-          sx={{ mt: 0.75, mb: 0.75, flexWrap: "wrap", gap: 1 }}
-        >
+        <Stack direction="row" spacing={1} sx={chipRowSx}>
           {chips.map((c) => (
             <Chip
               key={c}
               size="small"
               label={c}
               variant="outlined"
-              sx={{
-                borderColor: "primary.main",
-                color: "primary.main",
-                fontWeight: 500,
-              }}
+              sx={outlinedChipSx}
             />
           ))}
         </Stack>
@@ -61,7 +54,7 @@ function Role({ title, dates, bullets, chips = [] }) {
             </ListItemIcon>
             <ListItemText
               primary={b}
-              primaryTypographyProps={{ sx: { opacity: 0.9 } }}
+              primaryTypographyProps={{ sx: mutedBodySx }}
             />
           </ListItem>
         ))}
@@ -83,27 +76,19 @@ export default function CompanyExperience({
         justifyContent="space-between"
         alignItems={{ xs: "flex-start", sm: "baseline" }}
       >
-        <Typography variant="h6" sx={{ fontWeight: 800 }}>
-          {company}
-        </Typography>
-        <Typography variant="body2" sx={{ opacity: 0.75 }}>
-          {location}
-        </Typography>
+        <Typography variant="h6">{company}</Typography>
+        <Typography variant="body2" sx={mutedBodySx}>{location}</Typography>
       </Stack>
 
       {chips.length > 0 && (
-        <Stack direction="row" spacing={1} sx={{ flexWrap: "wrap", gap: 1 }}>
+        <Stack direction="row" spacing={1} sx={chipRowSx}>
           {chips.map((c) => (
             <Chip
               key={c}
               size="small"
               label={c}
               variant="outlined"
-              sx={{
-                borderColor: "primary.main",
-                color: "primary.main",
-                fontWeight: 500,
-              }}
+              sx={outlinedChipSx}
             />
           ))}
         </Stack>
