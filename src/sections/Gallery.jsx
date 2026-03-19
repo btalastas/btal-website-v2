@@ -10,6 +10,8 @@ import bjorn1 from "../assets/gallery/bjorn-1.webp";
 import bjorn2 from "../assets/gallery/bjorn-2.webp";
 import bjorn3 from "../assets/gallery/bjorn-3.webp";
 import bjornFriends from "../assets/gallery/bjorn-friends.webp";
+import bjornJanet1 from "../assets/gallery/bjorn_janet_painting.webp";
+import bjornJanet2 from "../assets/gallery/bjorn_janet.webp";
 import grad from "../assets/gallery/grad.webp";
 import harleyBall from "../assets/gallery/harley-ball.webp";
 import harleyBaby from "../assets/gallery/harley-baby.webp";
@@ -20,6 +22,8 @@ const images = [
   { src: bjorn1, alt: "Bjorn mirror picture" },
   { src: bjorn2, alt: "Bjorn with Carlos" },
   { src: bjorn3, alt: "Bjorn at Washington Commanders game" },
+  { src: bjornJanet1, alt: "Bjorn and Janet Paint and Sip" },
+  { src: bjornJanet2, alt: "Bjorn and Janet selfie" },
   { src: bjornFriends, alt: "Bjorn celebrating friend's birthday" },
   { src: grad, alt: "Bjorn in graduation attire" },
   { src: harleyBall, alt: "Harley with ball in her mouth" },
