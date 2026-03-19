@@ -7,8 +7,6 @@ import Projects from "./sections/Projects"
 import Gallery from "./sections/Gallery";
 import Contact from "./sections/Contact";
 
-import { Box, Container, Grid } from "@mui/material";
-
 export default function App() {
   return (
     <>
