@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useEffectEvent, useRef, useState } from "react";
 import { Box, Card, CardMedia, IconButton } from "@mui/material";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -44,6 +44,7 @@ export default function Gallery() {
     nextScrollLeft: 0,
   });
   const [isDragging, setIsDragging] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   const getScrollAmount = () => {
     const scroller = scrollerRef.current;
@@ -68,11 +69,34 @@ export default function Gallery() {
       return;
     }
 
+    const scrollAmount = getScrollAmount();
+    const nextLeft = scroller.scrollLeft + direction * scrollAmount;
+    const maxScrollLeft = scroller.scrollWidth - scroller.clientWidth;
+
+    if (direction > 0 && nextLeft >= maxScrollLeft - scrollAmount / 2) {
+      scroller.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+      return;
+    }
+
+    if (direction < 0 && scroller.scrollLeft <= scrollAmount / 2) {
+      scroller.scrollTo({
+        left: maxScrollLeft,
+        behavior: "smooth",
+      });
+      return;
+    }
+
     scroller.scrollBy({
-      left: direction * getScrollAmount(),
+      left: direction * scrollAmount,
       behavior: "smooth",
     });
   };
+  const cycleForward = useEffectEvent(() => {
+    scrollGallery(1);
+  });
 
   const handlePointerDown = (event) => {
     const scroller = scrollerRef.current;
@@ -124,6 +148,18 @@ export default function Gallery() {
     setIsDragging(false);
   };
 
+  useEffect(() => {
+    if (isDragging || isPaused) {
+      return undefined;
+    }
+
+    const intervalId = window.setInterval(() => {
+      cycleForward();
+    }, 3500);
+
+    return () => window.clearInterval(intervalId);
+  }, [isDragging, isPaused]);
+
   return (
     <Box sx={{ width: "100%", maxWidth: 900, mx: "auto", overflowX: "hidden" }}>
       <SectionHeader
@@ -132,7 +168,11 @@ export default function Gallery() {
         subtitle="A few snapshots from life outside the code editor."
       />
 
-      <Box sx={{ position: "relative", mt: 3, px: { xs: 0, sm: 7 } }}>
+      <Box
+        sx={{ position: "relative", mt: 3, px: { xs: 0, sm: 7 } }}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <IconButton
           aria-label="Previous gallery image"
           onClick={() => scrollGallery(-1)}

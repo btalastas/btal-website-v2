@@ -27,7 +27,7 @@ export default function Hero() {
           }}
         />
 
-        <Typography variant="h2">Bjorn Nathanial Talastas</Typography>
+        <Typography variant="h2">Bjorn Nathaniel Talastas</Typography>
 
         <Typography variant="h5" sx={mutedBodySx}>
           Aspiring Developer / Analyst • B.S. Computer Science, GMU
