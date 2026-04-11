@@ -1,7 +1,8 @@
 import { Typography, Button, Stack, Box, Avatar } from "@mui/material";
-import profilePic from "../assets/profile-pic.webp";
 import {scrollToSection} from "../utils/scrollToSection";
 import { mutedBodySx } from "../styles/sectionStyles";
+
+const profilePic = `${import.meta.env.VITE_GALLERY_BASE_URL}/profile-pic.webp`;
 
 export default function Hero() {
   return (

@@ -4,34 +4,24 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import SectionHeader from "../components/SectionHeader";
 
-import baseball1 from "../assets/gallery/baseball-1.webp";
-import baseball2 from "../assets/gallery/baseball-2.webp";
-import bjorn1 from "../assets/gallery/bjorn-1.webp";
-import bjorn2 from "../assets/gallery/bjorn-2.webp";
-import bjorn3 from "../assets/gallery/bjorn-3.webp";
-import bjornFriends from "../assets/gallery/bjorn-friends.webp";
-import bjornJanet1 from "../assets/gallery/bjorn_janet_painting.webp";
-import bjornJanet2 from "../assets/gallery/bjorn_janet.webp";
-import grad from "../assets/gallery/grad.webp";
-import harleyBall from "../assets/gallery/harley-ball.webp";
-import harleyBaby from "../assets/gallery/harley-baby.webp";
-import harleyHat from "../assets/gallery/harley-hat.webp";
-import harleySleep from "../assets/gallery/harley-sleep.webp";
+const galleryBaseUrl = import.meta.env.VITE_GALLERY_BASE_URL;
+
+const createGalleryImageUrl = (filename) => `${galleryBaseUrl}/${filename}`;
 
 const images = [
-  { src: bjorn1, alt: "Bjorn mirror picture" },
-  { src: bjorn2, alt: "Bjorn with Carlos" },
-  { src: bjorn3, alt: "Bjorn at Washington Commanders game" },
-  { src: bjornJanet1, alt: "Bjorn and Janet Paint and Sip" },
-  { src: bjornJanet2, alt: "Bjorn and Janet selfie" },
-  { src: bjornFriends, alt: "Bjorn celebrating friend's birthday" },
-  { src: grad, alt: "Bjorn in graduation attire" },
-  { src: harleyBall, alt: "Harley with ball in her mouth" },
-  { src: harleyBaby, alt: "Harley as a kitten" },
-  { src: harleyHat, alt: "Harley wearing a hat" },
-  { src: harleySleep, alt: "Harley sleeping" },
-  { src: baseball1, alt: "Bjorn at a Washington Nationals game" },
-  { src: baseball2, alt: "Bjorn at a New York Yankees game" },
+  { src: createGalleryImageUrl("bjorn-1.webp"), alt: "Bjorn mirror picture" },
+  { src: createGalleryImageUrl("bjorn-2.webp"), alt: "Bjorn with Carlos" },
+  { src: createGalleryImageUrl("bjorn-3.webp"), alt: "Bjorn at Washington Commanders game" },
+  { src: createGalleryImageUrl("bjorn_janet_painting.webp"), alt: "Bjorn and Janet Paint and Sip" },
+  { src: createGalleryImageUrl("bjorn_janet.webp"), alt: "Bjorn and Janet selfie" },
+  { src: createGalleryImageUrl("bjorn-friends.webp"), alt: "Bjorn celebrating friend's birthday" },
+  { src: createGalleryImageUrl("grad.webp"), alt: "Bjorn in graduation attire" },
+  { src: createGalleryImageUrl("harley-ball.webp"), alt: "Harley with ball in her mouth" },
+  { src: createGalleryImageUrl("harley-baby.webp"), alt: "Harley as a kitten" },
+  { src: createGalleryImageUrl("harley-hat.webp"), alt: "Harley wearing a hat" },
+  { src: createGalleryImageUrl("harley-sleep.webp"), alt: "Harley sleeping" },
+  { src: createGalleryImageUrl("baseball-1.webp"), alt: "Bjorn at a Washington Nationals game" },
+  { src: createGalleryImageUrl("baseball-2.webp"), alt: "Bjorn at a New York Yankees game" },
 ];
 
 export default function Gallery() {
