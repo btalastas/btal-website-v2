@@ -84,7 +84,7 @@ function SkillGroup({ title, icon, items, expanded, onChange }) {
 
 export default function Skills() {
 
-  const [expandedId, setExpandedId] = useState("languages"); // default open
+  const [expandedId, setExpandedId] = useState(false);
 
   const handleChange = (panelId) => (event, isExpanded) => {
     setExpandedId(isExpanded ? panelId : false);

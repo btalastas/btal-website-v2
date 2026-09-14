@@ -1,6 +1,8 @@
 import { Box, Typography, Divider, Stack } from "@mui/material";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import CompanyExperience from "../components/CompanyExperience";
+import Education from "../components/Education";
+import ProfessionalDevelopment from "../components/ProfessionalDevelopment";
 import Skills from "../components/Skills";
 import SectionHeader from "../components/SectionHeader";
 import {
@@ -26,6 +28,37 @@ export default function About() {
         George Mason University alumnus with a B.S. in Computer Science. 10+ years of professional experience ranging from start-ups to supporting government contracts. <br /><br />
         Looking to leverage my skills acquired through education and diverse work experiences to transition into a developement or analyst role.
       </Typography>
+
+      <Divider />
+
+      <Box sx={sectionHeaderSx}>
+        <Typography variant="h4" sx={centeredTitleSx}>
+          Education
+        </Typography>
+      </Box>
+
+      <Education
+        school="George Mason University"
+        degree="B.S. in Computer Science"
+        dates={"Aug 2021 - Aug 2024"}
+        chips={
+          ["Software Engineering",
+            "Web Application Devlopment",
+            "Algorithm Analysis",
+            "Data Structures",
+            "Object-Oriented Programming",
+            "Systems Programming",
+            "Operating Systems",
+            "Data Mining",
+            "Database Concepts",
+            "Secure Programming",
+            "Computer Networks",
+          ]
+        }
+      />
+
+
+
 
       <Divider />
 
@@ -138,8 +171,56 @@ export default function About() {
         ]}
       />
 
+      <ProfessionalDevelopment
+        entries={[
+          // Add courses, training, or certifications here:
+          // {
+          //   title: "Course or certification name",
+          //   provider: "Training provider or issuing organization",
+          //   dates: "Completion date or date range",
+          //   status: "Completed or In progress",
+          //   chips: ["Topic or skill"],
+          //   description: "What you learned or achieved.",
+          // },
+          {
+            title: "RiseUp with ServiceNow",
+            provider: "ServiceNow",
+            dates: "09/14/26-11/20/26",
+            status: "In progress",
+            chips: [
+              "ServiceNow Platform",
+              "System Administration",
+              "IT Service Management (ITSM)",
+              "Workflow Automation",
+              "Service Catalog",
+              "Reporting & Dashboards",
+              "User & Access Management",
+            ]
+          },
+          {
+            title: "Google Cybersecurity Professional Certificate",
+            provider: "Google / Coursera",
+            dates: "2026",
+            status: "Completed",
+            chips: [
+              "Python for Cybersecurity",
+              "Linux",
+              "SQL",
+              "SIEM Tools",
+              "Intrusion Detection Systems (IDS)",
+              "Incident Detection & Response",
+              "Packet Capture & Analysis",
+              "Security Frameworks & Controls",
+            ],
+          },
+        ]}
+      />
 
       <Skills />
+
+      <Divider />
+
+
     </Stack>
   );
 }
