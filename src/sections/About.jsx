@@ -26,7 +26,7 @@ export default function About() {
 
       <Typography sx={mutedBodySx}>
         George Mason University alumnus with a B.S. in Computer Science. 10+ years of professional experience ranging from start-ups to supporting government contracts. <br /><br />
-        Looking to leverage my skills acquired through education and diverse work experiences to transition into a developement or analyst role.
+        Currently attending the RiseUp with ServiceNow program to build skills in system administration, IT service management, and workflow automation. Looking to apply my education and diverse work experience to a development or analyst role.
       </Typography>
 
       <Divider />
@@ -185,7 +185,7 @@ export default function About() {
           {
             title: "RiseUp with ServiceNow",
             provider: "ServiceNow",
-            dates: "09/14/26-11/20/26",
+            dates: "2026",
             status: "In progress",
             chips: [
               "ServiceNow Platform",
@@ -195,7 +195,14 @@ export default function About() {
               "Service Catalog",
               "Reporting & Dashboards",
               "User & Access Management",
-            ]
+            ],
+            bullets: [
+              "Building foundational ServiceNow administration skills, including platform navigation, lists, filters, and form configuration.",
+              "Learning to manage tables, create reports, and organize platform changes using update sets.",
+              "Developing an understanding of IT service management processes and how ServiceNow supports business operations.",
+              "Learning application development fundamentals, including creating application tables and designing how users interact with custom applications.",
+              "Exploring ServiceNow scripting with client scripts, business rules, UI policies, and Script Includes to customize application behavior.",
+            ],
           },
           {
             title: "Google Cybersecurity Professional Certificate",
@@ -211,6 +218,12 @@ export default function About() {
               "Incident Detection & Response",
               "Packet Capture & Analysis",
               "Security Frameworks & Controls",
+            ],
+            bullets: [
+              "Completed practical training in identifying security risks, threats, and vulnerabilities and applying security frameworks and controls.",
+              "Used Python, Linux, and SQL to automate cybersecurity tasks and work with security-related data.",
+              "Practiced detecting and investigating security incidents using SIEM tools and intrusion detection systems.",
+              "Performed packet capture and network traffic analysis to identify potential security threats.",
             ],
           },
         ]}

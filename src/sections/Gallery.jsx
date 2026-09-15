@@ -22,7 +22,30 @@ const images = [
   { src: createGalleryImageUrl("harley-sleep.webp"), alt: "Harley sleeping" },
   { src: createGalleryImageUrl("baseball-1.webp"), alt: "Bjorn at a Washington Nationals game" },
   { src: createGalleryImageUrl("baseball-2.webp"), alt: "Bjorn at a New York Yankees game" },
+  { src: createGalleryImageUrl("basilica-1.webp"), alt: "Basilica in Spain, first view" },
+  { src: createGalleryImageUrl("basilica-2.webp"), alt: "Basilica in Spain, second view" },
+  { src: createGalleryImageUrl("bjorn_janet-2.webp"), alt: "Bjorn and Janet in Spain, first photo" },
+  { src: createGalleryImageUrl("bjorn_janet-3.webp"), alt: "Bjorn and Janet in Spain, second photo" },
+  { src: createGalleryImageUrl("casa.webp"), alt: "Architecture in Spain" },
+  { src: createGalleryImageUrl("city-1.webp"), alt: "City view in Spain" },
+  { src: createGalleryImageUrl("view-1.webp"), alt: "View from the Spain trip, photo 1" },
+  { src: createGalleryImageUrl("view-2.webp"), alt: "View from the Spain trip, photo 2" },
+  { src: createGalleryImageUrl("view-3.webp"), alt: "View from the Spain trip, photo 3" },
+  { src: createGalleryImageUrl("view-4.webp"), alt: "View from the Spain trip, photo 4" },
+  { src: createGalleryImageUrl("view-5.webp"), alt: "View from the Spain trip, photo 5" },
+  { src: createGalleryImageUrl("view-6.webp"), alt: "View from the Spain trip, photo 6" },
 ];
+
+const shuffleImages = (items) => {
+  const shuffled = [...items];
+
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  return shuffled;
+};
 
 export default function Gallery() {
   const scrollerRef = useRef(null);
@@ -35,6 +58,8 @@ export default function Gallery() {
   });
   const [isDragging, setIsDragging] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+
+  const [shuffledImages] = useState(() => shuffleImages(images));
 
   const getScrollAmount = () => {
     const scroller = scrollerRef.current;
@@ -214,7 +239,7 @@ export default function Gallery() {
             },
           }}
         >
-          {images.map((img) => (
+          {shuffledImages.map((img) => (
             <Card
               key={img.alt}
               data-gallery-card

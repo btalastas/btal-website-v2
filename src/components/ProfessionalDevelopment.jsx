@@ -1,4 +1,5 @@
-import { Box, Chip, Stack, Typography } from "@mui/material";
+import { Box, Chip, List, ListItem, ListItemIcon, ListItemText, Stack, Typography } from "@mui/material";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import {
   centeredTitleSx,
   chipRowSx,
@@ -17,7 +18,7 @@ export default function ProfessionalDevelopment({ entries = [] }) {
         </Typography>
       </Box>
 
-      {entries.map(({ title, provider, dates, status, chips = [], description }) => (
+      {entries.map(({ title, provider, dates, status, chips = [], description, bullets = [] }) => (
         <Stack key={`${provider}-${title}`} spacing={1.5}>
           <Stack
             direction={{ xs: "column", sm: "row" }}
@@ -69,6 +70,24 @@ export default function ProfessionalDevelopment({ entries = [] }) {
               </Stack>
             )}
             {description && <Typography sx={mutedBodySx}>{description}</Typography>}
+            {bullets.length > 0 && (
+              <List dense sx={{ mt: 0.5 }}>
+                {bullets.map((bullet) => (
+                  <ListItem key={bullet} sx={{ py: 0.25 }}>
+                    <ListItemIcon sx={{ minWidth: 32 }}>
+                      <CheckCircleOutlineIcon
+                        fontSize="small"
+                        sx={{ color: "primary.main" }}
+                      />
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={bullet}
+                      primaryTypographyProps={{ sx: mutedBodySx }}
+                    />
+                  </ListItem>
+                ))}
+              </List>
+            )}
           </Box>
         </Stack>
       ))}
