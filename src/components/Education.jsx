@@ -10,6 +10,8 @@ import {
 } from "@mui/material";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import {
+  centeredTitleSx,
+  sectionHeaderSx,
   chipRowSx,
   mutedBodySx,
   outlinedChipSx,
@@ -25,64 +27,72 @@ export default function Education({
   bullets = [],
 }) {
   return (
-    <Stack spacing={1.5}>
-      <Stack
-        direction={{ xs: "column", sm: "row" }}
-        justifyContent="space-between"
-        alignItems={{ xs: "flex-start", sm: "baseline" }}
-      >
-        <Typography variant="h6">{school}</Typography>
-        {location && (
-          <Typography variant="body2" sx={mutedBodySx}>{location}</Typography>
-        )}
-      </Stack>
+    <Stack spacing={3} sx={{ width: "100%" }}>
+      <Box sx={{ ...sectionHeaderSx, alignSelf: "center" }}>
+        <Typography variant="h4" sx={centeredTitleSx}>
+          Education
+        </Typography>
+      </Box>
 
-      <Box sx={timelineBlockSx}>
+      <Stack spacing={1.5}>
         <Stack
           direction={{ xs: "column", sm: "row" }}
           justifyContent="space-between"
           alignItems={{ xs: "flex-start", sm: "baseline" }}
-          sx={{ mb: 0.5 }}
         >
-          <Typography variant="subtitle1">{degree}</Typography>
-          {dates && (
-            <Typography variant="body2" sx={mutedBodySx}>{dates}</Typography>
+          <Typography variant="h6">{school}</Typography>
+          {location && (
+            <Typography variant="body2" sx={mutedBodySx}>{location}</Typography>
           )}
         </Stack>
 
-        {chips.length > 0 && (
-          <Stack direction="row" spacing={1} sx={chipRowSx}>
-            {chips.map((chip) => (
-              <Chip
-                key={chip}
-                size="small"
-                label={chip}
-                variant="outlined"
-                sx={outlinedChipSx}
-              />
-            ))}
+        <Box sx={timelineBlockSx}>
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            justifyContent="space-between"
+            alignItems={{ xs: "flex-start", sm: "baseline" }}
+            sx={{ mb: 0.5 }}
+          >
+            <Typography variant="subtitle1">{degree}</Typography>
+            {dates && (
+              <Typography variant="body2" sx={mutedBodySx}>{dates}</Typography>
+            )}
           </Stack>
-        )}
 
-        {bullets.length > 0 && (
-          <List dense sx={{ mt: 0.5 }}>
-            {bullets.map((bullet) => (
-              <ListItem key={bullet} sx={{ py: 0.25 }}>
-                <ListItemIcon sx={{ minWidth: 32 }}>
-                  <CheckCircleOutlineIcon
-                    fontSize="small"
-                    sx={{ color: "primary.main" }}
-                  />
-                </ListItemIcon>
-                <ListItemText
-                  primary={bullet}
-                  primaryTypographyProps={{ sx: mutedBodySx }}
+          {chips.length > 0 && (
+            <Stack direction="row" spacing={1} sx={chipRowSx}>
+              {chips.map((chip) => (
+                <Chip
+                  key={chip}
+                  size="small"
+                  label={chip}
+                  variant="outlined"
+                  sx={outlinedChipSx}
                 />
-              </ListItem>
-            ))}
-          </List>
-        )}
-      </Box>
+              ))}
+            </Stack>
+          )}
+
+          {bullets.length > 0 && (
+            <List dense sx={{ mt: 0.5 }}>
+              {bullets.map((bullet) => (
+                <ListItem key={bullet} sx={{ py: 0.25 }}>
+                  <ListItemIcon sx={{ minWidth: 32 }}>
+                    <CheckCircleOutlineIcon
+                      fontSize="small"
+                      sx={{ color: "primary.main" }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={bullet}
+                    primaryTypographyProps={{ sx: mutedBodySx }}
+                  />
+                </ListItem>
+              ))}
+            </List>
+          )}
+        </Box>
+      </Stack>
     </Stack>
   );
 }

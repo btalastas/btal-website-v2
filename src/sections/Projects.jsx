@@ -30,7 +30,7 @@ const projects = [
   {
     title: "Sports Lookup",
     description: "React application that allows users to view upcoming sports events, and statistics for teams and players. Uses Python and AWS Lambda for API calls.",
-    chips: ["React", "JavaScript", "Python", "AWS Lambda"],
+    chips: ["React", "Python", "AWS"],
     link: "https://github.com/btalastas/sports-lookup"
   },
   {
@@ -81,31 +81,31 @@ export default function Projects() {
       />
 
       <Box sx={{ width: "100%" }}>
-      <Grid container spacing={3}>
-        {projects.map((project) => (
-          <Grid item size={{ xs: 12, sm: 6, md: 4, lg: 4 }} key={project.title} sx={{ display: "flex" }}>
-            <Card sx={cardShellSx}>
-              <CardContent sx={{ flexGrow: 1 }}>
-                <Typography variant="h6">{project.title}</Typography>
-                <Stack direction="row" spacing={1} useFlexGap sx={chipRowSx}>
-                  {project.chips.map((chip) => (
-                    <Chip key={chip} label={chip} size="small" color="primary" variant="outlined"/>
-                  ))}
-                </Stack>
-                <Typography variant="body2" sx={mutedBodySx}>{project.description}</Typography>
-              </CardContent>
+        <Grid container spacing={3}>
+          {projects.map((project) => (
+            <Grid item size={{ xs: 12, sm: 6, md: 4, lg: 4 }} key={project.title} sx={{ display: "flex" }}>
+              <Card sx={cardShellSx}>
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography variant="h6">{project.title}</Typography>
+                  <Stack direction="row" spacing={1} useFlexGap sx={chipRowSx}>
+                    {project.chips.map((chip) => (
+                      <Chip key={chip} label={chip} size="small" color="primary" variant="outlined" />
+                    ))}
+                  </Stack>
+                  <Typography variant="body2" sx={mutedBodySx}>{project.description}</Typography>
+                </CardContent>
 
-              <CardActions>
-                <Button size="small" endIcon={<LaunchIcon />} href={project.link} target="_blank" rel="noopener noreferrer" disabled={!project.link}>
-                  View
-                </Button>
-              </CardActions>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+                <CardActions>
+                  <Button size="small" endIcon={<LaunchIcon />} href={project.link} target="_blank" rel="noopener noreferrer" disabled={!project.link}>
+                    View
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </Box>
-      
+
     </Stack>
   );
 }
